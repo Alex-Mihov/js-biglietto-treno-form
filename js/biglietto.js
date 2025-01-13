@@ -1,13 +1,15 @@
+// CHIEDO SCUSA HO FATTO UN POCHINO DI CONFUSIONE CON LE MILESTONE
+
 // selezione elementi di input
-const nome = document.getElementById("nome")
-const chilometri = document.getElementById("km")
-const eta = document.getElementById("eta")
+const nome = document.getElementById("nome");
+const chilometri = document.getElementById("km");
+const eta = document.getElementById("eta");
 const form = document.querySelector('form');
 
 // selezione elementi output
-const acquirente = document.getElementById("acquirente")
-const sconto = document.getElementById("sconto")
-const prezzoFinale = document.getElementById("prezzo-finale")
+const acquirente = document.getElementById("acquirente");
+const sconto = document.getElementById("sconto");
+const prezzoFinale = document.getElementById("prezzo-finale");
 
 
 // prendiamo i dati del form e li scriviamo nei blocchi
@@ -24,17 +26,35 @@ form.addEventListener("submit", (event) => {
     // output tipo di sconto applicato
     // SE l'acquirente è minorenne
     if (eta.value <= 17) {
-        sconto.innerText = "Ha diritto ad uno sconto del 20% per i minorenni!"
-        console.log("ha diritto al 20% di sconto")
+        sconto.innerText = "Ha diritto ad uno sconto del 20% per i minorenni!";
+        console.log("ha diritto al 20% di sconto");
     }
     // ALTRIMENTI SE l'acquirente è over 65
     else if (eta.value >= 65) {
-        sconto.innerText = "Ha diritto ad uno sconto del 40% per gli over 65!"
-        console.log("ha diritto al 40% di sconto")
+        sconto.innerText = "Ha diritto ad uno sconto del 40% per gli over 65!";
+        console.log("ha diritto al 40% di sconto");
     }
     // ALTRIMENTI prezzo intero
     else {
-        sconto.innerText = "Spiacente, non ha diritto a nessuno sconto."
-        console.log("spiacente, non ha diritto a nessuno sconto")
+        sconto.innerText = "Spiacente, non ha diritto a nessuno sconto.";
+        console.log("spiacente, non ha diritto a nessuno sconto");
     }
+
+    // output prezzo finale biglietto
+    // SE l'acquirente è minorenne
+    if (eta.value <= 17) {
+        prezzoFinale.innerText = (chilometri.value * 0.21) * 0.80;
+        console.log(prezzoFinale.innerText);
+    }
+    // ALTRIMENTI SE l'acquirente è over 65
+    else if (eta.value >= 65) {
+        prezzoFinale.innerText = (chilometri.value * 0.21) * 0.60;
+        console.log(prezzoFinale.innerText);
+    }
+    // ALTRIMENTI prezzo intero
+    else {
+        prezzoFinale.innerText = chilometri.value * 0.21;
+        console.log(prezzoFinale.innerText);
+    }
+
 });
