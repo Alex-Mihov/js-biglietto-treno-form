@@ -18,6 +18,23 @@ form.addEventListener("submit", (event) => {
 
     // output acquirente
     acquirente.innerText = nome.value.trim();
+    console.log(nome.value.trim());
+    
 
-    // ou
+    // output tipo di sconto applicato
+    // SE l'acquirente è minorenne
+    if (eta.value <= 17) {
+        sconto.innerText = "Ha diritto ad uno sconto del 20% per i minorenni!"
+        console.log("ha diritto al 20% di sconto")
+    }
+    // ALTRIMENTI SE l'acquirente è over 65
+    else if (eta.value >= 65) {
+        sconto.innerText = "Ha diritto ad uno sconto del 40% per gli over 65!"
+        console.log("ha diritto al 40% di sconto")
+    }
+    // ALTRIMENTI prezzo intero
+    else {
+        sconto.innerText = "Spiacente, non ha diritto a nessuno sconto."
+        console.log("spiacente, non ha diritto a nessuno sconto")
+    }
 });
