@@ -34,8 +34,22 @@ form {
     padding: 30px;
     border-radius: 8px;
     box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
-    max-width: 500px;
+    min-width: 500px;
     margin: 30px auto;
 }
 
 /* regole per il label e l'input */
+label {
+    font-weight: bold;
+    margin-top: 10px;
+    display: block;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
