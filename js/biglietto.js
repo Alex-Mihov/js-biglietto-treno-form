@@ -43,17 +43,17 @@ form.addEventListener("submit", (event) => {
     // output prezzo finale biglietto
     // SE l'acquirente è minorenne
     if (eta.value <= 17) {
-        prezzoFinale.innerText = (chilometri.value * 0.21) * 0.80;
+        prezzoFinale.innerText = ((chilometri.value * 0.21) * 0.80).toFixed(2);
         console.log(prezzoFinale.innerText);
     }
     // ALTRIMENTI SE l'acquirente è over 65
     else if (eta.value >= 65) {
-        prezzoFinale.innerText = (chilometri.value * 0.21) * 0.60;
+        prezzoFinale.innerText = ((chilometri.value * 0.21) * 0.60).toFixed(2);
         console.log(prezzoFinale.innerText);
     }
     // ALTRIMENTI prezzo intero
     else {
-        prezzoFinale.innerText = chilometri.value * 0.21;
+        prezzoFinale.innerText = (chilometri.value * 0.21).toFixed(2);
         console.log(prezzoFinale.innerText);
     }
 
